@@ -1,6 +1,8 @@
 buildscript {
     ext {
         hilt_version = "2.40.5"
+        retrofit_version = "2.9.0"
+        logging_interceptor_version = "4.9.3"
     }
 }
 
@@ -28,8 +30,16 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            debuggable false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "BASE_URL", "\"https://dragon-ball-super-api.herokuapp.com/api/\""
+        }
+        debug {
+            minifyEnabled false
+            debuggable true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "BASE_URL", "\"https://dragon-ball-super-api.herokuapp.com/api/\""
         }
     }
     compileOptions {
@@ -55,6 +65,9 @@ dependencies {
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
 
-
+    // Retrofit & Gson
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$logging_interceptor_version"
 
 }
