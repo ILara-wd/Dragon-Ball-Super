@@ -22,3 +22,28 @@ data class CharacterResponse(
     @SerializedName("originplanet")
     var originplanet: String? = null
 )
+
+
+data class CharacterDBS(
+    var id: Int? = null,
+    var name: String? = null,
+    var specie: String? = null,
+    var role: String? = null,
+    var imageUrl: String? = null,
+    var status: String? = null,
+    var universe: String? = null,
+    var transform: Any? = null,
+    var originplanet: String? = null
+)
+
+fun CharacterResponse.toDomain() = CharacterDBS(
+    id = id,
+    name = name,
+    specie = specie,
+    role = role,
+    imageUrl = imageUrl,
+    status = status,
+    universe = universe,
+    transform = transform,
+    originplanet = originplanet
+)

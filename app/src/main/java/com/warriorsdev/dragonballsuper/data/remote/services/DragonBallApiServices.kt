@@ -9,6 +9,4 @@ interface DragonBallApiServices {
     @GET(CHARACTER)
     suspend fun serviceCharacterList(): List<CharacterResponse>
 
-
 }
-
