@@ -16,11 +16,12 @@ class MainViewModel @Inject constructor(
     private val getCharacterUseCase: GetCharacterUseCase
 ) : ViewModel() {
 
-    private lateinit var charactersDBS: List<CharacterDBS>
+    private var charactersDBS: List<CharacterDBS> = emptyList()
     private val _state: MutableStateFlow<State> = MutableStateFlow(State.IncompleteRequirements)
     val state: StateFlow<State> get() = _state
 
     fun getCharacter() {
+        _state.value = State.Loading
         viewModelScope.launch {
             kotlin.runCatching {
                 getCharacterUseCase()
@@ -40,16 +41,9 @@ class MainViewModel @Inject constructor(
     }
 
     sealed class State {
-
         object Loading : State()
-        object HideKeyboard : State()
-        object CompleteRequirements : State()
         object IncompleteRequirements : State()
         object ShowError : State()
-        object SavedSuccess : State()
-        object SavedFailure : State()
-        object Default : State()
-
         data class ShowResults(val response: List<CharacterDBS>) : State()
     }
 

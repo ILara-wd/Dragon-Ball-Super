@@ -53,6 +53,18 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        viewBinding true
+    }
+    android.applicationVariants.all {
+        variant ->
+            variant.outputs.all {
+                def flavor = variant.name
+                def versionName = variant.versionName
+                def versionCode = variant.versionCode
+                outputFileName = "Dragon_Ball_Super_${flavor}_${versionName}_V${versionCode}.apk"
+            }
+    }
 }
 
 dependencies {
