@@ -1,10 +1,10 @@
-package com.warriorsdev.dragonballsuper.ui
+package com.warriorsdev.dragonballsuper.ui.main
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.warriorsdev.dragonballsuper.data.character.CharacterDBS
 import com.warriorsdev.dragonballsuper.data.character.toDomain
-import com.warriorsdev.dragonballsuper.ui.usecases.GetCharacterUseCase
+import com.warriorsdev.dragonballsuper.ui.main.usecases.GetCharacterUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

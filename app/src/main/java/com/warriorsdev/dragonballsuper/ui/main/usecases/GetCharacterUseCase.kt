@@ -1,7 +1,7 @@
-package com.warriorsdev.dragonballsuper.ui.usecases
+package com.warriorsdev.dragonballsuper.ui.main.usecases
 
 import com.warriorsdev.dragonballsuper.data.character.CharacterResponse
-import com.warriorsdev.dragonballsuper.data.repository.DragonBallRepository
+import com.warriorsdev.dragonballsuper.ui.main.repository.DragonBallRepository
 import com.warriorsdev.dragonballsuper.domain.dispatchers.DispatcherProvider
 import kotlinx.coroutines.withContext
 import javax.inject.Inject

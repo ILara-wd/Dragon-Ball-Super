@@ -1,7 +1,7 @@
-package com.warriorsdev.dragonballsuper.data.repository
+package com.warriorsdev.dragonballsuper.ui.main.repository
 
 import com.warriorsdev.dragonballsuper.data.character.CharacterResponse
-import com.warriorsdev.dragonballsuper.data.remote.DragonBallRemoteDataSource
+import com.warriorsdev.dragonballsuper.ui.main.DragonBallRemoteDataSource
 import javax.inject.Inject
 
 class DragonBallRepository @Inject constructor(

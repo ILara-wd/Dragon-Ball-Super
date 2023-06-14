@@ -1,4 +1,4 @@
-package com.warriorsdev.dragonballsuper.data.remote
+package com.warriorsdev.dragonballsuper.ui.main
 
 import com.warriorsdev.dragonballsuper.data.character.CharacterResponse
 import com.warriorsdev.dragonballsuper.data.remote.services.DragonBallApiServices
